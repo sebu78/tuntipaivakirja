@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palkkalaskuri</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+    <div class="main-layout">
+        <div class="left-panel">
+            <div class="header-content">
+                <h1 id="mainTitle">Palkkalaskuri</h1>
+                <div class="kayttajanimi-input">
+                    <label for="kayttajanimi">Käyttäjänimi:</label>
+                    <input type="text" id="kayttajanimi" placeholder="Syötä nimesi">
+                </div>
+            </div>
+            <div id="viestiAlue"></div>
+            <div class="input-form">
+                <label for="pvm">Päivämäärä:</label>
+                <input type="date" id="pvm" required>
+    
+                <label for="asiakas">Asiakkaan nimi:</label>
+                <input type="text" id="asiakas">
+    
+                <label for="paikkakunta">Paikkakunta:</label>
+                <input type="text" id="paikkakunta">
+    
+                <label for="tunnit">Tunnit:</label>
+                <input type="number" id="tunnit" min="0" step="0.5">
+    
+                <label for="urakka">Urakan hinta (€):</label>
+                <input type="number" id="urakka" min="0" step="0.01">
+    
+                <label for="tyontehtava">Työntehtävä:</label>
+                <textarea id="tyontehtava" rows="3"></textarea>
+    
+                <div class="checkbox-container">
+                    <input type="checkbox" id="paivarahatCheckbox">
+                    <label for="paivarahatCheckbox">Sain päivärahan</label>
+                </div>
+                
+                <button id="lisaaButton">Lisää merkintä</button>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="yhteenveto">
+                <h2>Yhteenveto:</h2>
+                <p>Urakkapalkka: <span id="urakkaYhteensa">0.00</span> €</p>
+                <p>Tuntipalkka: <span id="tuntiPalkkaYhteensa">0.00</span> €</p>
+                <p>Päivärahat: <span id="paivarahatYhteensa">0.00</span> €</p>
+                <h3>Bruttopalkka yhteensä: <span id="bruttoPalkkaYhteensa">0.00</span> €</h3>
+            </div>
+    
+            <div class="merkinnat">
+                <div class="merkinnat-header">
+                    <div class="header-buttons">
+                        <button id="tallennaKuukausi">Tallenna kuukausi (PDF)</button>
+                    </div>
+                </div>
+                <details id="merkinnat-dropdown">
+                    <summary>Näytä merkinnät</summary>
+                    <ul id="merkinnatLista">
+                        </ul>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

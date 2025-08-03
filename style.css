@@ -1,0 +1,358 @@
+/* Yleiset asetukset */
+:root {
+    --bg-color: #F8F9FA;
+    --container-bg: #FFFFFF;
+    --primary-color: #4A90E2;
+    --primary-dark: #357ABD;
+    --secondary-color: #6C757D;
+    --text-color: #343A40;
+    --border-color: #DEE2E6;
+    --input-bg: #F1F3F5;
+    --success-color: #5CB85C;
+    --error-color: #D9534F;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2em;
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-panel, .right-panel {
+    background-color: var(--container-bg);
+    padding: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: left;
+    margin: 0 0 0.5em 0;
+    font-size: 2em;
+}
+
+h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Uudet käyttäjänimi-kentän tyylit */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.kayttajanimi-input {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.kayttajanimi-input label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    white-space: nowrap;
+}
+
+.kayttajanimi-input input {
+    width: 100%;
+    padding: 0.8em;
+    border: 2px solid #000;
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.kayttajanimi-input input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Lomake ja syötteet */
+.input-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    background-color: var(--bg-color);
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.input-form label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5em;
+    grid-column: span 2;
+}
+
+.input-form input,
+.input-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 2px solid #000;
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    transition: all 0.2s;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.input-form input:focus,
+.input-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.input-form #pvm,
+.input-form #asiakas,
+.input-form #paikkakunta,
+.input-form #tunnit,
+.input-form #urakka {
+    grid-column: span 1;
+}
+
+.input-form #tyontehtava,
+.input-form .checkbox-container {
+    grid-column: span 2;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background-color: var(--input-bg);
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 0.5em;
+}
+
+.checkbox-container label {
+    margin: 0;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.input-form button {
+    grid-column: span 2;
+    padding: 1em;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 1em;
+}
+
+.input-form button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Yhteenveto */
+.yhteenveto {
+    background-color: var(--bg-color);
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.yhteenveto p, .yhteenveto h3 {
+    margin: 0.7em 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+
+.yhteenveto p:last-of-type, .yhteenveto h3 {
+    border-bottom: none;
+}
+
+.yhteenveto h3 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    color: var(--primary-color);
+}
+
+.yhteenveto span {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.yhteenveto h3 span {
+    color: var(--primary-color);
+}
+
+/* Merkinnät (alasvetovalikko) */
+.merkinnat {
+    background-color: var(--bg-color);
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.merkinnat-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 0.5em;
+}
+
+#tallennaKuukausi {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.7em 1.2em;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#tallennaKuukausi:hover {
+    background-color: #5A6268;
+}
+
+#merkinnat-dropdown {
+    margin-top: 1em;
+}
+
+#merkinnat-dropdown summary {
+    padding: 1em;
+    background-color: #E9ECEF;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#merkinnatLista {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1em;
+}
+
+#merkinnatLista li {
+    background-color: var(--container-bg);
+    padding: 1.2em;
+    margin-bottom: 0.8em;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#merkinnatLista li span {
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.poista-btn {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    padding: 0.6em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s;
+}
+
+.poista-btn:hover {
+    background-color: #C9302C;
+}
+
+/* Viestit */
+#viestiAlue {
+    padding: 1em;
+    margin-bottom: 1.5em;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    font-weight: 600;
+}
+
+.viesti {
+    display: block;
+}
+
+.viesti.success {
+    background-color: #E7F6E7;
+    color: #4F8A10;
+    border: 1px solid #C8E6C8;
+}
+
+.viesti.error {
+    background-color: #F8E7E7;
+    color: #8A4F4F;
+    border: 1px solid #E6C8C8;
+}
+
+/* Responsiivinen design */
+@media (max-width: 900px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    .left-panel, .right-panel {
+        padding: 1.5em;
+    }
+    .input-form #pvm,
+    .input-form #asiakas,
+    .input-form #paikkakunta,
+    .input-form #tunnit,
+    .input-form #urakka,
+    .input-form #tyontehtava,
+    .checkbox-container,
+    .input-form button {
+        grid-column: span 1;
+    }
+    .merkinnat-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .header-buttons {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}
